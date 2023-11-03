@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.settings.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "services": [ "./packages/common/src" ],
+      "services-*": [ "./packages/*/src" ]
+    },
+  },
+  "include": [ "packages/*/src", "packages/*/test", "packages/*/src/@types" ],
+  "exclude": [ "**/node_modules/**", "**/dist/**" ]
+}

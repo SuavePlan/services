@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.settings.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "services": [ "./packages/common/src" ],
+      "services-*": [ "./packages/*/src" ]
+    }
+  },
+  "include": [ "packages/*/src", "packages/*/test", "packages/*/src/@types" ],
+  "exclude": [ "**/node_modules/**", "**/dist/**" ],
+  "typedocOptions": {
+    "name": "Services",
+    "entryPoints": [
+	  "packages/client/src/index.ts",
+	  "packages/core/src/index.ts",
+      "packages/server/src/index.ts",
+    ],
+    "readme": "./docs/apidocs.md",
+    "out": "apidocs",
+    "excludePrivate": true
+  }
+}
